@@ -47,7 +47,26 @@ function disapear(){
     mainImage.style.height = '0';
 }
 
+function disapear2(){
+    img1.style.width = '0';
+    img1.style.height = '0';
+}
+
+function disapear3(){
+    img2.style.width = '0';
+    img2.style.height = '0';
+}
+
+function disapear4(){
+    img3.style.width = '0';
+    img3.style.height = '0';
+}
+
 mainImage.addEventListener('drag', disapear);
+img1.addEventListener('drag', disapear2);
+img2.addEventListener('drag', disapear3);
+img3.addEventListener('drag', disapear4);
+
 
 //5
 
@@ -60,5 +79,19 @@ function keypress(){
 document.addEventListener('keydown', keypress);
 
 //6
+
+const introText = document.querySelector('.intro p');
+
+introText.addEventListener('mouseenter', func =>{
+    introText.style.border = '3px solid black';
+    introText.style.padding = '5px';
+});
+
+//7
+
+introText.addEventListener('mouseleave', exit =>{
+    introText.style.border = 'none';
+    introText.style.padding = '0px';
+})
 
 
