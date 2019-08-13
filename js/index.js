@@ -82,16 +82,34 @@ document.addEventListener('keydown', keypress);
 
 const introText = document.querySelector('.intro p');
 
-introText.addEventListener('mouseenter', func =>{
-    introText.style.border = '3px solid black';
-    introText.style.padding = '5px';
+introText.addEventListener('mouseenter', (event) =>{
+    event.target.style.border = '3px solid black';
+    event.target.style.padding = '5px';
 });
 
 //7
 
-introText.addEventListener('mouseleave', exit =>{
-    introText.style.border = 'none';
-    introText.style.padding = '0px';
+introText.addEventListener('mouseleave', (event) =>{
+    event.target.style.border = 'none';
+    event.target.style.padding = '0px';
 })
 
+//8
+const welcome = document.querySelector('.intro h2')
+const x = document.createElement("INPUT")
+x.setAttribute('type', 'text')
+x.setAttribute('value', 'Hi Select Me')
+welcome.appendChild(x)
+x.style.marginLeft = '40px';
 
+const y = document.createElement('p')
+y.style.textAlign = 'center';
+welcome.appendChild(y)
+
+function orangeColor(){
+    welcome.style.backgroundColor = 'orange';
+    y.textContent = 'argh you selected me'
+}
+
+x.addEventListener('select', orangeColor)
+    
