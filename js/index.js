@@ -112,4 +112,33 @@ function orangeColor(){
 }
 
 x.addEventListener('select', orangeColor)
+
+//9 & 10
+
+const signup = document.querySelectorAll('.btn')
+const bottom = document.querySelector('footer p')
+const user = document.createElement("INPUT")
+user.setAttribute('type', 'text')
+user.setAttribute('value', 'Username')
+user.style.height = '30px';
+user.style.marginLeft = '5%';
+bottom.appendChild(user)
+
+const password = document.createElement("INPUT")
+password.setAttribute('type', 'password')
+password.setAttribute('value', 'Password')
+password.style.height = '30px';
+password.style.marginLeft = '5%';
+bottom.appendChild(password)
+
+password.addEventListener('blur', (event) => {
+    event.target.style.background = '';    
+});
+
+
+password.addEventListener('focus', (event) => {
+    event.target.style.background = 'salmon';    
+});
+
+
     
