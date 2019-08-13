@@ -130,9 +130,10 @@ password.setAttribute('value', 'Password')
 password.style.height = '30px';
 password.style.marginLeft = '5%';
 bottom.appendChild(password)
-
+//stop Propagation
 password.addEventListener('blur', (event) => {
-    event.target.style.background = '';    
+    event.target.style.background = ''; 
+    event.stopPropagation()   
 });
 
 
@@ -141,4 +142,12 @@ password.addEventListener('focus', (event) => {
 });
 
 
-    
+
+// Prevent Defualt
+const aTags = document.querySelectorAll('.nav .nav-link')
+
+function prevent(){
+    aTags.preventDefault()
+}
+
+aTags.addEventListener('click', prevent)
